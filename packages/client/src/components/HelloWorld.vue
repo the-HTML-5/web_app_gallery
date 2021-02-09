@@ -1,14 +1,14 @@
 <template>
   <h1>{{ msg }}</h1>
 
-  <label>
-    <input type="checkbox" v-model="useScriptSetup" /> Use
-    <code>&lt;script setup&gt;</code>
-  </label>
-  <label>
-    <input type="checkbox" v-model="useTsPlugin" /> Provide types for
-    <code>*.vue</code> imports
-  </label>
+  <ui-form-field>
+    <ui-checkbox v-model="useScriptSetup" input-id="use-script-setup"></ui-checkbox>
+    <label for="use-script-setup">Use <code>&lt;script setup&gt;</code></label>
+  </ui-form-field>
+  <ui-form-field>
+    <ui-checkbox v-model="useTsPlugin" input-id="use-ts-plugin"></ui-checkbox>
+    <label for="use-ts-plugin">Provide types for <code>*.vue</code> imports</label>
+  </ui-form-field>
 
   <p>
     Recommended IDE setup:
@@ -39,7 +39,7 @@
     <br />4. Open VSCode command input
     <br />5. Search and run "Select TypeScript version" -> "Use workspace version"
   </p>
-  <button @click="count++">count is: {{ count }}</button>
+  <ui-button @click="count++">count is: {{ count }}</ui-button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
