@@ -20,18 +20,18 @@ const routes: Array<RouteConfig> = [
     path: "/categories/:category?",
     alias: "/",
     name: "Category",
-    component: () => import(/* webpackChunkName: "AppList" */ "../views/AppList.vue")
+    component: () => import(/* webpackChunkName: "app-list" */ "../views/AppList.vue")
   },
   {
     path: "/apps/submit",
     name: "Submit App",
-    component: () => import(/* webpackChunkName: "SubmitApp" */ "../views/SubmitApp.vue"),
+    component: () => import(/* webpackChunkName: "submit-app" */ "../views/SubmitApp.vue"),
     beforeEnter: requireAuth
   },
   {
     path: "/apps/:id([0-9a-f]{24})",
     name: "Web App",
-    component: () => import(/* webpackChunkName: "WebApp" */ "../views/WebApp.vue")
+    component: () => import(/* webpackChunkName: "web-app" */ "../views/WebApp.vue")
   },
   {
     path: "/about",
@@ -50,23 +50,23 @@ const routes: Array<RouteConfig> = [
     path: "/signIn",
     alias: "/login",
     name: "signIn",
-    component: () => import(/* webpackChunkName: "signin" */ "../views/SignInView.vue")
+    component: () => import(/* webpackChunkName: "sign-in" */ "../views/SignInView.vue")
   },
   {
     path: "/signUp",
     name: "signUp",
-    component: () => import(/* webpackChunkName: "signup" */ "../views/SignUpView.vue")
+    component: () => import(/* webpackChunkName: "sign-up" */ "../views/SignUpView.vue")
   },
   {
     path: "/apps/:id([0-9a-f]{24})/review",
     name: "Rating",
-    component: () => import(/* webpackChunkName: "review" */ "../views/review.vue"),
+    component: () => import(/* webpackChunkName: "review" */ "../views/Review.vue"),
     beforeEnter: requireAuth
   },
   {
     path: "/profile",
     name: "Profile",
-    component: () => import(/* webpackChunkName: "review" */ "../views/userProfileView.vue"),
+    component: () => import(/* webpackChunkName: "user-profile" */ "../views/UserProfileView.vue"),
     beforeEnter: requireAuth
   }
 ];
