@@ -30,17 +30,13 @@ test('should error if invalid url', async () => {
   try {
     await getManifestInfo('googlenews');
   } catch (e) {
-    expect(e.message).toBe('Invalid URL: googlenews');
+    expect(e.message).toBe('Invalid URL');
   }
 });
 
 test('should return manifest, manifestURL, description, and appleWebAppCapable', async () => {
-  const {
-    appDescription,
-    manifest,
-    manifestURL,
-    appleMobileWebAppCapable,
-  } = await getManifestInfo('http://news.google.com/');
+  const { appDescription, manifest, manifestURL, appleMobileWebAppCapable } =
+    await getManifestInfo('http://news.google.com/');
 
   expect(appDescription).not.toBe('');
   expect(manifest).toEqual({

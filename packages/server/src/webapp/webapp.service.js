@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 
 // find a web app by id and return
 const findWebApp = async (id) => {
-  // const res = await WebApp.findById(id);
   const res = await WebApp.aggregate([
     { $match: { _id: mongoose.Types.ObjectId(id) } },
     {
@@ -37,14 +36,6 @@ const findWebApp = async (id) => {
         newRoot: '$data',
       },
     },
-    /* {
-      $lookup: {
-        from: 'reviews',
-        foreignField: '_id',
-        localField: 'reviews',
-        as: 'reviews',
-      },
-    }, */
     {
       $addFields: {
         averageRating: { $avg: '$reviews.rating' },

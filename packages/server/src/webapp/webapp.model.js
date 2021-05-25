@@ -90,6 +90,8 @@ webAppSchema.methods.toJSON = function () {
   return webApp;
 };
 
+webAppSchema.index({ averageRating: 1 });
+
 const WebApp = mongoose.model('WebApp', webAppSchema);
 
 module.exports = WebApp;
